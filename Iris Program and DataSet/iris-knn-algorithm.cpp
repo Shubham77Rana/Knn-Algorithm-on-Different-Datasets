@@ -53,7 +53,7 @@ float distance(int index)
 		{
 			d += pow(train_data[i][j] - test_data[index][j], 2);
 		}
-		distance_array[i].classes = train_data[i][4];
+		distance_array[i].classes = train_data[i][ATTRIBUTES-1];
 		distance_array[i].distance = sqrt(d);
 	}
 }
@@ -93,13 +93,13 @@ int best_knn_evaluator(int KNN, int random_array[])
 		}
 	}
 
-	if(max_index == test_data[i][4])
+	if(max_index == test_data[i][ATTRIBUTES-1])
 		accuracy ++;
      }
 
      return accuracy;
 }
-
+0
 int main()
 {
     int random_array[DATA];
